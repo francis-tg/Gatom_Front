@@ -1,6 +1,7 @@
 import React from "react";
 import {useNavigate} from "react-router-dom";
 import Keyboard from "../../components/Keyboard";
+import Loading from "../../components/Loading";
 import {tgcelValidNumber} from "../../lib/validation";
 
 function Transfert() {
@@ -18,7 +19,7 @@ function Transfert() {
     Function to check account
     */
     setTimeout(() => {
-      navigate("/");
+      navigate("/confirm");
     }, 3000);
   }
   return (

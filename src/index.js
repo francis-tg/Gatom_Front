@@ -8,6 +8,8 @@ import TopBar from "./components/TopBar.jsx";
 import Services from "./pages/Services.jsx";
 import Montant from "./pages/Montant.jsx";
 import Transfert from "./pages/services/Transfert.jsx";
+import Splash from "./components/Splash.jsx";
+import Confirm from "./pages/Confirm.jsx";
 
 function Index() {
   return (
@@ -21,6 +23,7 @@ function Index() {
           <Route path='/service' element={<Services />} />
           <Route path='/montant' element={<Montant />} />
           <Route path='/service/transfert' element={<Transfert />} />
+          <Route path='/confirm' element={<Confirm />} />
         </Routes>
       </div>
     </>
