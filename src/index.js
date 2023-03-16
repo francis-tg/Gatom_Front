@@ -10,6 +10,9 @@ import Montant from "./pages/Montant.jsx";
 import Transfert from "./pages/services/Transfert.jsx";
 import Splash from "./components/Splash.jsx";
 import Confirm from "./pages/Confirm.jsx";
+import {Provider} from "react-redux";
+import {store} from "./redux/index.js";
+import EntrerArgent from "./pages/EntrerArgent.jsx";
 
 function Index() {
   return (
@@ -24,6 +27,7 @@ function Index() {
           <Route path='/montant' element={<Montant />} />
           <Route path='/service/transfert' element={<Transfert />} />
           <Route path='/confirm' element={<Confirm />} />
+          <Route path='/put-money' element={<EntrerArgent />} />
         </Routes>
       </div>
     </>
@@ -31,11 +35,13 @@ function Index() {
 }
 
 createRoot(document.querySelector("#root")).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Index />
-    </BrowserRouter>
-  </React.StrictMode>
+  <Provider store={store}>
+    <React.StrictMode>
+      <BrowserRouter>
+        <Index />
+      </BrowserRouter>
+    </React.StrictMode>
+  </Provider>
 );
 
 module.hot.accept();

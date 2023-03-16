@@ -1,0 +1,12 @@
+.bottom-info-container{
+    background-color: #ccccccb4;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    .bottom-info{
+        font-size: 2rem;
+        font-weight: 400;
+    }
+}

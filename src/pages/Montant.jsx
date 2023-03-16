@@ -1,8 +1,8 @@
 import React from "react";
 import {useNavigate} from "react-router-dom";
-
-import Keyboard from "../components/Keyboard.jsx";
+import BackBtn from "../components/BackBtn.jsx";
 import Loading from "../components/Loading.jsx";
+import NumKeyBoard from "../components/NumKeyBoard.jsx";
 function Montant() {
   const [keyValue, setKeyValue] = React.useState("");
   const [isLoad, setLoading] = React.useState(false);
@@ -23,15 +23,23 @@ function Montant() {
   }
   return (
     <div className='container p-3'>
+      <BackBtn />
       {isLoad && <Loading />}
       <h2 className='text-center'>Entrer le montant</h2>
-      <div className='screen'>{keyValue ? keyValue : 0} F</div>
-      <Keyboard
+      <div className='screen-container'>
+        <div className='screen'>{keyValue ? keyValue : 0} F</div>
+      </div>
+      {/*  <Keyboard
         value={setKeyValue}
         valideCaption='Continuer'
         valideAction={Continue}
         valideDisable={validation()}
-      />
+      /> */}
+      <NumKeyBoard
+        keyState={setKeyValue}
+        setDisable={validation()}
+        valideCaption='Continuer'
+        continueAction={Continue}></NumKeyBoard>
     </div>
   );
 }
