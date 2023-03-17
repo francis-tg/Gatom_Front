@@ -1,11 +1,15 @@
 .back-btn{
     position: fixed;
     left: 0;
-    top: 40%;
+    top: 35%;
     background-color: #ccc;
-    width: 100px;
-    height: 50px;
+    width: 150px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 2.5rem;
+    flex-direction: column;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
 }

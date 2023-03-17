@@ -23,7 +23,11 @@ function Montant() {
   }
   return (
     <div className='container p-3'>
-      <BackBtn />
+      <BackBtn
+        onClick={() => {
+          navigate("/service");
+        }}
+      />
       {isLoad && <Loading />}
       <h2 className='text-center'>Entrer le montant</h2>
       <div className='screen-container'>

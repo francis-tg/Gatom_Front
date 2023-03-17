@@ -39,7 +39,11 @@ function Confirm() {
         setLoading(true);
         setTimeout(() => {
           setLoading(false);
-          Swal.fire("Reçu imprimée", "Retirer votre reçu...", "success");
+          Swal.fire("Reçu imprimée", "Retirer votre reçu...", "success").then(
+            (s) => {
+              s.isConfirmed && cancel();
+            }
+          );
         }, 3000);
       }
       if (r.isDismissed) {

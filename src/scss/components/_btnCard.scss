@@ -1,0 +1,30 @@
+.btn-card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url(../../img/transp_togocom.png) no-repeat;
+    background-size: cover;
+    background-position: -350px 20px;
+    height: 100vh;
+    margin-top: -50px;
+    
+    .grid-card{
+        display: grid;
+        grid-template-columns: 350px 350px;
+        gap: 200px;
+        
+        .btn-card{
+            width: 100%;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: black;
+            font-size: 1.8rem;
+            border-radius: 30px;
+        }
+    }
+}

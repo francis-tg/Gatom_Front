@@ -3,6 +3,7 @@ import {useNavigate} from "react-router-dom";
 import NumKeyBoard from "../../components/NumKeyBoard";
 import Loading from "../../components/Loading";
 import {tgcelValidNumber} from "../../lib/validation";
+import BackBtn from "../../components/BackBtn";
 
 function Transfert() {
   const [keyValue, setKeyValue] = React.useState("");
@@ -21,6 +22,11 @@ function Transfert() {
   return (
     <div className='container p-3'>
       {isLoad && <Loading />}
+      <BackBtn
+        onClick={() => {
+          navigate("/montant");
+        }}
+      />
       <h2 className='text-center'>Entrer votre numéro</h2>
       <div className='screen-container'>
         <div className='screen'>{keyValue}</div>
