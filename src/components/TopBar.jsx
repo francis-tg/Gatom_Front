@@ -1,17 +1,20 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {idleTime} from "../hook/idleTime";
 
 function TopBar() {
+  const navigate = useNavigate();
   const [time, setTime] = React.useState({
     hours: "",
     min: "",
     sec: ""
   });
-
+  /* const [idleTime, setIdleTime] = React.useState(0); */
   React.useEffect(() => {
     Timer();
-    document.addEventListener("touchmove", (e) => {
-      console.log(e);
+
+    idleTime(5, (count) => {
+      navigate("/");
     });
   }, []);
   function Timer() {

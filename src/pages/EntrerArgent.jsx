@@ -1,10 +1,20 @@
 import React from "react";
+import {icons} from "react-icons";
 import {useNavigate} from "react-router-dom";
+import Swal from "sweetalert2";
 import Loading from "../components/Loading";
 
 function EntrerArgent() {
   const navigate = useNavigate();
   const [isLoad, setLoading] = React.useState(false);
+  function goToConfirm() {
+    Swal.fire({
+      title: "Recapitulons...",
+      html: "<p>Vous avez demandé <h5>un Transfert / Dépôt</h5> de <h5>XXXX F</h5> sur le compte <h5>XX XX XX XX</h5></p>",
+      confirmButtonColor: "green",
+      confirmButtonText: "Continuer"
+    });
+  }
   return (
     <div className='container p-3'>
       {isLoad && <Loading />}
@@ -38,7 +48,7 @@ function EntrerArgent() {
             setLoading(true);
             setTimeout(() => {
               setLoading(false);
-              navigate("/confirm");
+              goToConfirm();
             }, 4000);
           }}
           style={{width: 250, height: 130}}>

@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5c1b69cd.css",
+    "main.js": "/static/js/main.fe97f94c.js",
+    "static/media/fond2.jpg": "/static/media/fond2.e15aa144838b185d7be0.jpg",
+    "static/media/fond.jpg": "/static/media/fond.22b3a30fb5bc440d723f.jpg",
+    "static/media/transp_togocom.png": "/static/media/transp_togocom.c169db063aaf89a67407.png",
+    "static/media/Icone-Togocom@2x.png": "/static/media/Icone-Togocom@2x.3165cafa7621e05669e8.png",
+    "static/media/gear.png": "/static/media/gear.b075164320d6c792d595.png",
+    "index.html": "/index.html",
+    "main.5c1b69cd.css.map": "/static/css/main.5c1b69cd.css.map",
+    "main.fe97f94c.js.map": "/static/js/main.fe97f94c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5c1b69cd.css",
+    "static/js/main.fe97f94c.js"
+  ]
+}
