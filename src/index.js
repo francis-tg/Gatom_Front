@@ -1,18 +1,18 @@
 import React from "react";
 import {createRoot} from "react-dom/client";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import App from "./components/App.jsx";
-import "bootstrap/scss/bootstrap.scss";
+import App from "./pages/App.jsx";
+
 import "./scss/main.scss";
 import TopBar from "./components/TopBar.jsx";
 import Services from "./pages/Services.jsx";
 import Montant from "./pages/Montant.jsx";
-import Transfert from "./pages/services/Transfert.jsx";
-import Splash from "./components/Splash.jsx";
+import Transfert from "./pages/Numero.jsx";
 import Confirm from "./pages/Confirm.jsx";
 import {Provider} from "react-redux";
 import {store} from "./redux/index.js";
 import EntrerArgent from "./pages/EntrerArgent.jsx";
+import {ToastContainer} from "react-toastify";
 
 function Index() {
   return (
@@ -39,6 +39,7 @@ createRoot(document.querySelector("#root")).render(
     <React.StrictMode>
       <BrowserRouter>
         <Index />
+        <ToastContainer />
       </BrowserRouter>
     </React.StrictMode>
   </Provider>

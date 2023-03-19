@@ -1,3 +1,5 @@
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/react-toastify/scss/main.scss";
 @import "./components/Carousel";
 @import "./components/Keypad";
 @import "./components/loading";
@@ -7,3 +9,19 @@
 @import "./components/BackBtn";
 @import "./components/btnCard";
 
+
+.item-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.custom-bg-tgcel{
+    background: url(../img/transp_togocom.png) no-repeat;
+    background-size: cover;
+    background-position: -250px -10px;
+    height: 90vh;
+}
+body{
+cursor: none;
+}

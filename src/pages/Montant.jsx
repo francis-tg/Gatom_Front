@@ -1,5 +1,6 @@
 import React from "react";
 import {useNavigate} from "react-router-dom";
+import {toast} from "react-toastify";
 import BackBtn from "../components/BackBtn.jsx";
 import Loading from "../components/Loading.jsx";
 import NumKeyBoard from "../components/NumKeyBoard.jsx";
@@ -22,14 +23,17 @@ function Montant() {
     }, 3000);
   }
   return (
-    <div className='container p-3'>
+    <div className='container p-3 custom-bg-tgcel'>
       <BackBtn
         onClick={() => {
           navigate("/service");
         }}
       />
       {isLoad && <Loading />}
-      <h2 className='text-center'>Entrer le montant</h2>
+      <div className='item-header '>
+        <h3>Transfert de crédit / Dépôt Tmoney</h3>
+        <h3>Entrer le montant</h3>
+      </div>
       <div className='screen-container'>
         <div className='screen'>{keyValue ? keyValue : 0} F</div>
       </div>
@@ -39,6 +43,7 @@ function Montant() {
         valideAction={Continue}
         valideDisable={validation()}
       /> */}
+
       <NumKeyBoard
         keyState={setKeyValue}
         setDisable={validation()}

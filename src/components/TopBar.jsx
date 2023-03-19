@@ -1,5 +1,6 @@
 import React from "react";
 import {Link, useNavigate} from "react-router-dom";
+import Swal from "sweetalert2";
 import {idleTime} from "../hook/idleTime";
 
 function TopBar() {
@@ -13,10 +14,15 @@ function TopBar() {
   React.useEffect(() => {
     Timer();
 
-    idleTime(5, (count) => {
-      navigate("/");
-    });
-  }, []);
+    const startIdle = () => {
+      idleTime(5, (count) => {
+        Swal.close();
+        navigate("/");
+      });
+    };
+    startIdle();
+    document.addEventListener("touchend", startIdle);
+  }, [idleTime]);
   function Timer() {
     const date = new Date();
     setTime((prevState) => ({

@@ -9,7 +9,7 @@ export function keypadFunc(state) {
         _.isNumber(parseInt(e.target.innerText)) &&
         !_.isNaN(parseInt(e.target.innerText))
       ) {
-        console.log(_.isNaN(parseInt(e.target.innerText)));
+        //console.log(_.isNaN(parseInt(e.target.innerText)));
 
         data += parseInt(e.target.innerText);
         state(data);
@@ -20,6 +20,7 @@ export function keypadFunc(state) {
     });
   });
 }
+
 export function NumpadFunc(state) {
   let data = "";
   const keys = getEls(".numpad .num");
@@ -29,7 +30,7 @@ export function NumpadFunc(state) {
         _.isNumber(parseInt(e.target.innerText)) &&
         !_.isNaN(parseInt(e.target.innerText))
       ) {
-        console.log(_.isNaN(parseInt(e.target.innerText)));
+        // console.log(_.isNaN(parseInt(e.target.innerText)));
 
         data += parseInt(e.target.innerText);
         state(data);

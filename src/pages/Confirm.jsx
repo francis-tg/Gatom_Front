@@ -14,49 +14,27 @@ function Confirm() {
       navigate("/");
     }, 3000);
   }
+
   function confirm() {
-    setSending(true);
+    setLoading(true);
     setTimeout(() => {
-      setSending(false);
-      openSwal();
+      setLoading(false);
+      goToConfirm();
     }, 5000);
   }
-  function openSwal() {
+
+  function goToConfirm() {
     Swal.fire({
-      title: "Terminé ...",
-      backdrop: false,
-      icon: "question",
-      showConfirmButton: true,
-      showCancelButton: true,
-      confirmButtonText: "Terminer et imprimer le reçu",
-      cancelButtonText: "Terminer et Fermer",
-      confirmButtonColor: "#007bff",
-      cancelButtonColor: "#393939",
-      showCloseButton: false,
-      reverseButtons: true
+      title: "Recapitulons...",
+      html: "<p>Vous avez demandé <h5>un Transfert / Dépôt</h5> de <h5>XXXX F</h5> sur le compte <h5>XX XX XX XX</h5></p>",
+      confirmButtonColor: "green",
+      confirmButtonText: "Continuer"
     }).then((r) => {
-      if (r.isConfirmed) {
-        setLoading(true);
-        setTimeout(() => {
-          setLoading(false);
-          Swal.fire("Reçu imprimée", "Retirer votre reçu...", "success").then(
-            (s) => {
-              s.isConfirmed && cancel();
-            }
-          );
-        }, 3000);
-      }
-      if (r.isDismissed) {
-        setLoading(true);
-        setTimeout(() => {
-          setLoading(false);
-          navigate("/");
-        }, 2500);
-      }
+      r.isConfirmed && navigate("/put-money");
     });
   }
   return (
-    <div className='container  py-5'>
+    <div className='container  py-5 custom-bg-tgcel'>
       {isLoad && <Loading />}
       {isSending && <SendLoading />}
 
@@ -67,11 +45,14 @@ function Confirm() {
           <span className='text-danger'>91595914</span>
         </h1>
       </div>
-      <div className='d-flex gap-3'>
-        <button className='btn btn-danger btn-lg w-100 ' onClick={cancel}>
+      <div className='d-flex gap-5 mt-5'>
+        <button
+          className='btn btn-danger btn-lg w-50 '
+          style={{height: 120}}
+          onClick={cancel}>
           Annuler
         </button>
-        <button className='btn btn-success btn-lg w-100' onClick={confirm}>
+        <button className='btn btn-success btn-lg w-50' onClick={confirm}>
           Confirmer
         </button>
       </div>

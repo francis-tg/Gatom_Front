@@ -6,7 +6,8 @@ export function idleTime(count = 5, callback) {
     if (idleTime > count) {
       // si l'utilisateur est inactif depuis plus de 2 minutes
       clearInterval(idleInteval);
-      callback(count);
+      //callback(count);
+      renitializeCount();
     }
   }
   function renitializeCount() {

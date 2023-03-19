@@ -1,10 +1,10 @@
 import React from "react";
-import Slider from "./Slider.jsx";
+import Slider from "../components/Slider.jsx";
 import Img1 from "../img/fond.jpg";
 import Img2 from "../img/fond2.jpg";
-import SlideItem from "./SlideItem.jsx";
+import SlideItem from "../components/SlideItem.jsx";
 import {useNavigate} from "react-router-dom";
-import BottomInfo from "./BottomInfo.jsx";
+import BottomInfo from "../components/BottomInfo.jsx";
 
 function App() {
   const navigate = useNavigate();
